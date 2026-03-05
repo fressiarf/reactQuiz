@@ -1,15 +1,14 @@
 import React from 'react'
 import MostrarUsuario from '../components/MostrarUsuario'
-
+import Nav from '../components/Navbar'
 
 function PagAdmin() {
 
 
   return (
-    <div>
-
+    <div style={{ width: '100%' }}>
+      <Nav />
       <MostrarUsuario />
-
     </div>
   )
 }
