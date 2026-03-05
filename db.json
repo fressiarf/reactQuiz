@@ -1,0 +1,18 @@
+{
+  "usuarios": [
+    {
+      "id": "f1a2",
+      "nombre": "Fressia Rivera",
+      "contra": "2020",
+      "correo": "friveraffwd@gmail.com",
+      "rol": "Admin"
+    },
+    {
+      "id": "936e",
+      "nombre": "Errrol",
+      "contra": "3030",
+      "correo": "errol@gmail.com",
+      "rol": "usuario"
+    }
+  ]
+}
