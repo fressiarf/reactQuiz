@@ -1,7 +1,5 @@
-//GET USUARIOS funcion que consulta al endpoint a traves de un fetch,conuslta al API al Endpoint
-
-
-async function getUsuarios() {
+/* /GET USUARIOS funcion que consulta al endpoint a traves de un fetch,conuslta al API al Endpoint*/
+async function getPerfil() {
 
     try {
 
@@ -15,7 +13,7 @@ async function getUsuarios() {
         
     } catch (error) {
         
-        console.error("Error al obtener los usuarios", error);
+        console.error("Error al obtener los perfiles", error);
     }
 
 
@@ -28,7 +26,7 @@ async function getUsuarios() {
 //POST USUARIOS AQUI SE VA A CREAR LA FUNCION PARA GUARDAR UN NUEVO USUARIO
 
 
-async function postUsuarios(usuario){
+async function postPerfil(perfil){
 
        try {
 
@@ -37,17 +35,17 @@ async function postUsuarios(usuario){
             headers:{
                 "Content-Type":"application/json"
             },
-            body:JSON.stringify(usuario)
+            body:JSON.stringify(perfil)
 
         })
 
-        const datosUsuarios= await respuesta.json();
+        const datosPerfil= await respuesta.json();
 
-        return datosUsuarios;
+        return datosPerfil;
         
     } catch (error) {
         
-        console.error("Error al obtener los usuarios", error);
+        console.error("Error al obtener los perfiles", error);
     }
 }
 
@@ -57,7 +55,7 @@ async function postUsuarios(usuario){
 //PUT
 
 
-async function patchUsuarios(usuario,id){
+async function patchPerfil(perfil,id){
 
        try {
 
@@ -66,13 +64,13 @@ async function patchUsuarios(usuario,id){
             headers:{
                 "Content-Type":"application/json"
             },
-            body:JSON.stringify(usuario)
+            body:JSON.stringify(perfil)
 
         })
 
-        const datosUsuarios= await respuesta.json();
+        const datosPerfil= await respuesta.json();
 
-        return datosUsuarios;
+        return datosPerfil;
         
     } catch (error) {
         
@@ -86,7 +84,7 @@ async function patchUsuarios(usuario,id){
 
 
 
-async function deleteUsuarios(id){
+async function deletePerfil(id){
 
        try {
 
@@ -100,14 +98,14 @@ async function deleteUsuarios(id){
         
     } catch (error) {
         
-        console.error("Error al Eliminar el registro", error);
+        console.error("Error al Eliminar el perfil", error);
     }
 }
 
 
 
 
-export default {postUsuarios,getUsuarios,patchUsuarios,deleteUsuarios}
+export default {postPerfil,getPerfil,patchPerfil,deletePerfil}
 
 
 

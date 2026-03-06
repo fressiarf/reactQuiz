@@ -11,19 +11,21 @@ function FormRegistro() {
     const [nombreCompleto, setNombreUsuario] = useState("")
     const [contraUsuario, setContraUsuario] = useState("")
     const [correoUsuario, setCorreoUsuario] = useState("")
+    const [telefonoUsuario, setTelefonoUsuario] = useState("")
+
 
     async function registroUsuario() {
 
-        if (!nombreCompleto || !contraUsuario || !correoUsuario) {
+        if (!nombreCompleto || !contraUsuario || !correoUsuario || !telefonoUsuario) {
             Swal.fire({
                 title: '¡error!',
                 text: 'todos los campos deben estar llenos',
                 icon: 'warning',
                 confirmButtonText: 'Aceptar'
             }); 
-            return;
+           
 
-        } else { console.log(nombreCompleto, contraUsuario, correoUsuario); }
+        } else { console.log(nombreCompleto, contraUsuario, correoUsuario, telefonoUsuario); }
         let usuarioAlmacenado = {}
 
         const datoGuardar = await ServiceUsuario.getUsuarios()
@@ -42,7 +44,8 @@ function FormRegistro() {
             nombre: nombreCompleto,
             contra: contraUsuario,
             correo: correoUsuario,
-            rol: "usuario"
+            rol: "usuario",
+            telefono: telefonoUsuario
 
         }
             usuarioAlmacenado = await ServiceUsuario.postUsuarios(objUsuario)
@@ -62,6 +65,7 @@ function FormRegistro() {
         setNombreUsuario("")
         setContraUsuario("")
         setCorreoUsuario("")
+        setTelefonoUsuario("")
     }
 
      function irInicioSesion () {
@@ -78,6 +82,8 @@ function FormRegistro() {
             <input type="email" value={correoUsuario} onChange={(evento) => setCorreoUsuario(evento.target.value)} />
             <h4 >Contraseña</h4>
             <input type="password" value={contraUsuario} onChange={(evento) => setContraUsuario(evento.target.value)} />
+            <h4>Telefono</h4>
+            <input type="text" value={telefonoUsuario} onChange={(evento) => setTelefonoUsuario(evento.target.value)} />
             <div>
                 <button onClick={registroUsuario}>Registrarse</button>
                 <button onClick={irInicioSesion}>¿Ya tienes una cuenta?</button>

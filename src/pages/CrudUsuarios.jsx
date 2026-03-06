@@ -7,13 +7,7 @@ function CrudUsuarios() {
 
 
   return (
-    <div style={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      minHeight: '100vh',
-      width: '100%'
-    }}>
+    <div >
       <FormRegistro />
     </div>
   )

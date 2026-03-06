@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Nav } from 'react-bootstrap'
-import logo from "../img/logo.png"
+import logo2 from "../img/logo2.png"
 import "../style/nav.css"
 import { Link, useNavigate } from 'react-router-dom'
 
@@ -17,45 +17,47 @@ function Navbar() {
   }
   let contenidoNav
   if (userLogeado) {
-    contenidoNav = (
-      <>
-        <Nav className="nav" activeKey="/home">
-
+    if (userLogeado.rol === "Admin") {
+      contenidoNav = (
+        <>
+          <Nav className="nav" activeKey="/home">
           <Nav.Item>
             <Nav.Link href="/home">Home</Nav.Link>
           </Nav.Item>
+            <Nav.Item>
+              <Nav.Link href="/perfil">Perfil</Nav.Link>
+            </Nav.Item>
+            <button onClick={cerrarSesion}>Cerrar sesión</button>
+          </Nav>
+        </>
+      )
+    } else {
+      contenidoNav = (
+        <>
+          <Nav className="nav" activeKey="/home">
           <Nav.Item>
-            <Nav.Link eventKey="/login">Iniciar Sesion</Nav.Link>
+            <Nav.Link href="/home">Home</Nav.Link>
           </Nav.Item>
-          <Nav.Item>
-            <Nav.Link eventKey="link-2">Link</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link eventKey="disabled" disabled>
-              Disabled
-            </Nav.Link>
-          </Nav.Item>
-          <button onClick={cerrarSesion}>Cerrar sesión</button>
-        </Nav>
-      </>
-    )
-  } else {
+            <Nav.Item>
+              <Nav.Link href="/perfil">Perfil</Nav.Link>
+            </Nav.Item>
+            <button onClick={cerrarSesion}>Cerrar sesión</button>
+          </Nav>
+        </>
+      )
+    }
+} else {
     contenidoNav = (
       <>
         <Nav className="nav" activeKey="/home">
+           <Nav.Item>
+            <Nav.Link href="/perfil">Perfil</Nav.Link>
+          </Nav.Item>
           <Nav.Item>
             <Nav.Link href="/home">Home</Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link href="/login">Iniciar Sesion</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link eventKey="link-2">Link</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link eventKey="disabled" disabled>
-              Disabled
-            </Nav.Link>
           </Nav.Item>
         </Nav>
       </>
@@ -66,7 +68,7 @@ function Navbar() {
       <header className="nav-header">
         <div className="logo-container">
           <Link to="/home">
-            <img src={logo} alt="logo" className='logo' />
+            <img src={logo2} alt="logo" className='logo' />
           </Link>
           <h1 className="logoText">Red huellas Seguras</h1>
         </div>

@@ -5,14 +5,16 @@
       "nombre": "Fressia Rivera",
       "contra": "2020",
       "correo": "friveraffwd@gmail.com",
-      "rol": "Admin"
+      "rol": "Admin",
+      "telefono": "63252565"
     },
     {
       "id": "936e",
       "nombre": "Errrol",
       "contra": "3030",
       "correo": "errol@gmail.com",
-      "rol": "usuario"
+      "rol": "usuario",
+      "telefono": "4567890"
     }
   ]
 }
