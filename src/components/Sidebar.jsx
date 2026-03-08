@@ -1,36 +1,61 @@
 import React from 'react';
+import Swal from 'sweetalert2';
 import { Nav } from 'react-bootstrap';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import '../style/sidebar.css';
 import logo from '../img/logo2.png';
 
-/**
- * Componente Sidebar Premium
- * Refactorizado para separar lógica de renderizado.
- */
-function Sidebar() {
-  // --- LÓGICA Y ESTADO (ANTES DEL RETURN) ---
-  const location = useLocation();
 
-  // Definición de los items del menú para una gestión centralizada
+function Sidebar() {
+  
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const cerrarSesion = () => {
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: "Se cerrará tu sesión actual.",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#4e73df',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, salir',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.removeItem('usuarioLogueado');
+        navigate('/login');
+        Swal.fire({
+          title: '¡Sesión cerrada!',
+          text: 'Has salido correctamente.',
+          icon: 'success',
+          timer: 1500,
+          showConfirmButton: false
+        })
+      }
+    })
+  };
+
+  
   const menuItems = [
     { path: '/home', label: 'Inicio', isHome: true },
     { path: '/adopcion', label: 'Adopciones' },
     { path: '/perfil', label: 'Mi Perfil' },
     { isDivider: true },
     { path: '/admin', label: 'Administración' },
-    { path: '/registro', label: 'Registrar Usuario' },
+    { path: '/admin-adopcion', label: 'Gestionar Adopciones' },
+    { path: '/admin-solicitudes', label: 'Solicitudes Adopción' },
     { isDivider: true },
     { label: 'Ajustes', disabled: true }
   ];
 
-  // Función para determinar si una ruta está activa
+  
   const checkActive = (path, isHome) => {
     if (isHome && (location.pathname === '/' || location.pathname === '/home')) return 'active';
     return location.pathname === path ? 'active' : '';
   };
 
-  // Mapeo de los links antes del renderizado final
+ 
   const navigationLinks = menuItems.map((item, index) => {
     if (item.isDivider) {
       return <div key={`divider-${index}`} className="sidebar-divider"></div>;
@@ -56,7 +81,7 @@ function Sidebar() {
     );
   });
 
-  // --- ESTRUCTURA (RETURN) ---
+ 
   return (
     <aside className="sidebar-container">
       <div className="sidebar-header">
@@ -69,6 +94,12 @@ function Sidebar() {
       <Nav className="flex-column sidebar-nav">
         {navigationLinks}
       </Nav>
+
+      <div className="sidebar-footer">
+        <button onClick={cerrarSesion} className="btnCerrarSesion">
+          Cerrar Sesión
+        </button>
+      </div>
     </aside>
   );
 }

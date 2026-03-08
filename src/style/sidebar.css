@@ -113,3 +113,18 @@
     border-bottom: 3px solid #2ecc71;
   }
 }
+
+/* FOOTER CON BOTÓN DE SALIR */
+.sidebar-footer {
+  margin-top: auto;
+  padding: 20px 25px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar-footer .btnCerrarSesion {
+  width: 80%;
+  text-align: center;
+}
+

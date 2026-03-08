@@ -14,7 +14,7 @@
       "nombre": "Errrol",
       "contra": "3030",
       "correo": "errol@gmail.com",
-      "rol": "usuario",
+      "rol": "Admin",
       "telefono": "4567890",
       "fotoPerfil": "https://www.shutterstock.com/image-photo/pug-dog-nerd-glasses-office-260nw-2334971981.jpg"
     }
@@ -49,66 +49,6 @@
       "genero": "Macho",
       "descripcion": "Leal y protector, necesita espacio para correr.",
       "foto": "https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?w=500"
-    },
-    {
-      "id": "4",
-      "nombre": "Mishi",
-      "especie": "Gato",
-      "raza": "Mestizo",
-      "edad": "6 meses",
-      "genero": "Hembra",
-      "descripcion": "Una gatita juguetona y curiosa, busca un hogar lleno de amor.",
-      "foto": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?w=500"
-    },
-    {
-      "id": "5",
-      "nombre": "Pelusa",
-      "especie": "Gato",
-      "raza": "Persa",
-      "edad": "2 años",
-      "genero": "Hembra",
-      "descripcion": "Una gatita tierna y cariñosa, busca un hogar lleno de amor.",
-      "foto": "https://images.unsplash.com/photo-1735618603118-89e26b0dcf6e?w=500"
-    },
-    {
-      "id": "6",
-      "nombre": "Chispas",
-      "especie": "Perro",
-      "raza": "Criollo",
-      "edad": "1 año",
-      "genero": "Hembra",
-      "descripcion": "Una perrita tierna, busca un hogar lleno de amor.",
-      "foto": "https://images.unsplash.com/photo-1729251524660-d62a34a92685?w=500"
-    },
-    {
-      "id": "7",
-      "nombre": "Firulais",
-      "especie": "Perro",
-      "raza": "Criollo",
-      "edad": "3 años",
-      "genero": "Macho",
-      "descripcion": "Un perrito  juguetón, busca un hogar lleno de amor.",
-      "foto": "https://images.unsplash.com/photo-1619876451741-407e8350442e?w=500"
-    },
-    {
-      "id": "8",
-      "nombre": "Firulais",
-      "especie": "Perro",
-      "raza": "Labrador",
-      "edad": "4 años",
-      "genero": "Macho",
-      "descripcion": "Un perrito tierno y juguetón, busca un hogar lleno de amor.",
-      "foto": "https://images.unsplash.com/photo-1667516837506-c13f487e58bf?w=500"
-    },
-    {
-      "id": "9",
-      "nombre": "Balto",
-      "especie": "Perro",
-      "raza": "Husky Siberiano",
-      "edad": "1 año",
-      "genero": "Macho",
-      "descripcion": "Un cachorro activo y juguetón con hermosos ojos azules, le encanta correr y jugar en el parque.",
-      "foto": "https://images.unsplash.com/photo-1617895153857-82fe79adfcd4?w=500"
     }
   ],
   "donaciones": [
@@ -135,6 +75,30 @@
       "historia": "Rescatado tras un accidente, Rayo necesitó meses de terapia. Hoy corre por el parque con su nueva familia como si nunca hubiera pasado nada.",
       "foto": "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?w=500",
       "etiqueta": "Recuperado"
+    }
+  ],
+  "solicitudes": [
+    {
+      "id": "84ae",
+      "usuarioId": "f1a2",
+      "nombreUsuario": "Fressia Rivera Fallas",
+      "correo": "friveraffwd@gmail.com",
+      "telefono": "23456789",
+      "mascotaSolicitada": "Max",
+      "mensaje": "si",
+      "fecha": "8/3/2026",
+      "estado": "Aprobada"
+    },
+    {
+      "id": "152e",
+      "usuarioId": "f1a2",
+      "nombreUsuario": "Fressia Rivera Fallas",
+      "correo": "friveraffwd@gmail.com",
+      "telefono": "23456789",
+      "mascotaSolicitada": "Luna",
+      "mensaje": "Me gustaría darle un hogar ",
+      "fecha": "8/3/2026",
+      "estado": "Pendiente"
     }
   ]
 }

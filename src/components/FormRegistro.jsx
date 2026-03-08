@@ -28,7 +28,7 @@ function FormRegistro() {
     }
 
     async function registroUsuario() {
-        // 1. Validación de campos vacíos
+
         if (!nombreCompleto || !contraUsuario || !correoUsuario || !telefonoUsuario) {
             Swal.fire({
                 title: '¡error!',
@@ -39,19 +39,28 @@ function FormRegistro() {
             return;
         }
 
-        // 2. Validación de formato de correo
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(correoUsuario)) {
+
+        if (!/\.(com|net|org|edu|gov|cr)$/i.test(correoUsuario)) {
             Swal.fire({
                 icon: 'warning',
                 title: 'Correo Inválido',
-                text: 'Ingrese un correo electrónico válido.',
+                text: 'El correo debe terminar en un dominio válido (ej. .com, .net, .org, .cr).',
                 confirmButtonColor: '#4e73df'
             });
             return;
         }
 
-        // 3. Validación de longitud de contraseña
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(correoUsuario)) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Correo Inválido',
+                text: 'Ingrese un formato de correo electrónico válido.',
+                confirmButtonColor: '#4e73df'
+            });
+            return;
+        }
+
         if (contraUsuario.length < 8) {
             Swal.fire({
                 icon: 'warning',
@@ -62,7 +71,6 @@ function FormRegistro() {
             return;
         }
 
-        // 4. Validación de teléfono (8 dígitos)
         if (!/^[0-9]{8}$/.test(telefonoUsuario)) {
             Swal.fire({
                 icon: 'warning',
@@ -78,23 +86,22 @@ function FormRegistro() {
 
         if (datoGuardar.length  === 0) {
             const objUsuario = {
-            nombre: nombreCompleto,
-            contra: contraUsuario,
-            correo: correoUsuario,
-            rol: "Admin",
-            fotoPerfil: fotoPerfil
-        }
+                nombre: nombreCompleto,
+                contra: contraUsuario,
+                correo: correoUsuario,
+                rol: "Admin",
+                fotoPerfil: fotoPerfil
+            }
             usuarioAlmacenado = await ServiceUsuario.postUsuarios(objUsuario)
-            
         } else {
             const objUsuario = {
-            nombre: nombreCompleto,
-            contra: contraUsuario,
-            correo: correoUsuario,
-            rol: "usuario",
-            telefono: telefonoUsuario,
-            fotoPerfil: fotoPerfil
-        }
+                nombre: nombreCompleto,
+                contra: contraUsuario,
+                correo: correoUsuario,
+                rol: "usuario",
+                telefono: telefonoUsuario,
+                fotoPerfil: fotoPerfil
+            }
             usuarioAlmacenado = await ServiceUsuario.postUsuarios(objUsuario)
         }
 
@@ -116,12 +123,12 @@ function FormRegistro() {
         }
     }
 
-     function irInicioSesion () {
-     navigate('/login')
-  }
+    function irInicioSesion () {
+        navigate('/login')
+    }
     return (
         <div className='formRegistro'>
-            {/* Sección Izquierda: Decorativa con imagen de fondo en CSS */}
+
             <div className="registro-left">
                 <img src={logo} alt="Logo" className="logo-form" />
                 <div className="decor-box">
@@ -130,7 +137,7 @@ function FormRegistro() {
                 </div>
             </div>
 
-            {/* Sección Derecha: Formulario */}
+
             <div className="registro-right">
                 <div className="already-account">
                     <p>¿Ya tienes una cuenta?</p>

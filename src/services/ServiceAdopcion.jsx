@@ -22,7 +22,7 @@ async function getAdopciones() {
 
 
 
-//POST USUARIOS AQUI SE VA A CREAR LA FUNCION PARA GUARDAR UN NUEVO USUARIO
+
 
 
 async function postAdopciones(adopcion){
@@ -51,7 +51,6 @@ async function postAdopciones(adopcion){
 
 
 
-//PUT
 
 
 async function patchAdopciones(adopcion,id){
@@ -79,7 +78,6 @@ async function patchAdopciones(adopcion,id){
 
 
 
-//DELETE
 
 
 

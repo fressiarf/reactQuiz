@@ -3,7 +3,7 @@ import ServiceCasosExito from '../services/ServiceCasosExito';
 import '../style/casosExito.css';
 
 function CasosExito() {
-  // --- LÓGICA Y ESTADO (ANTES DEL RETURN) ---
+
   const [casos, setCasos] = useState([]);
 
   const cargarCasos = async () => {
@@ -17,7 +17,7 @@ function CasosExito() {
     cargarCasos();
   }, []);
 
-  // Mapeo de los casos para renderizar
+
   const listadoCasos = casos.length > 0 ? (
     casos.map(caso => (
       <div key={caso.id} className="caso-card">
@@ -41,7 +41,7 @@ function CasosExito() {
     </p>
   );
 
-  // --- ESTRUCTURA (RETURN) ---
+
   return (
     <section className="casos-exito-section">
       <h2 className="casos-title">Historias que nos inspiran</h2>

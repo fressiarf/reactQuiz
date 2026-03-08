@@ -23,7 +23,7 @@ async function getPerfil() {
 
 
 
-//POST USUARIOS AQUI SE VA A CREAR LA FUNCION PARA GUARDAR UN NUEVO USUARIO
+
 
 
 async function postPerfil(perfil){
@@ -52,7 +52,6 @@ async function postPerfil(perfil){
 
 
 
-//PUT
 
 
 async function patchPerfil(perfil,id){
@@ -80,7 +79,6 @@ async function patchPerfil(perfil,id){
 
 
 
-//DELETE
 
 
 

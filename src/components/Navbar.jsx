@@ -4,6 +4,7 @@ import logo2 from "../img/logo2.png"
 import "../style/nav.css"
 import { Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
+import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
 
 function Navbar() {
 
@@ -36,17 +37,29 @@ function Navbar() {
       }
     })
   }
+  const socialIcons = (
+    <div className="nav-socials">
+      <a href="https://facebook.com/huellassegurasCR" target="_blank" rel="noreferrer" title="Facebook"><FaFacebook size={22}/></a>
+      <a href="https://instagram.com/huellasseguras_CR" target="_blank" rel="noreferrer" title="Instagram"><FaInstagram size={22}/></a>
+      <a href="https://twitter.com/huellasseguras_CR" target="_blank" rel="noreferrer" title="Twitter"><FaTwitter size={22}/></a>
+    </div>
+  )
+
   let contenidoNav
   if (userLogeado) {
     if (userLogeado.rol === "Admin") {
       contenidoNav = (
         <>
           <Nav className="nav" activeKey="/home">
+          {socialIcons}
           <Nav.Item>
             <Nav.Link href="/admin">Admin</Nav.Link>
           </Nav.Item>
             <Nav.Item>
               <Nav.Link href="/perfil">Perfil</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link href="/mis-solicitudes">Mis Solicitudes</Nav.Link>
             </Nav.Item>
             <button onClick={cerrarSesion} className='btnCerrarSesion'>Cerrar sesión</button>
           </Nav>
@@ -56,8 +69,12 @@ function Navbar() {
       contenidoNav = (
         <>
           <Nav className="nav" activeKey="/home">
+            {socialIcons}
             <Nav.Item>
               <Nav.Link href="/perfil">Perfil</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link href="/mis-solicitudes">Mis Solicitudes</Nav.Link>
             </Nav.Item>
             <button onClick={cerrarSesion} className='btnCerrarSesion'>Cerrar sesión</button>
           </Nav>
@@ -68,6 +85,7 @@ function Navbar() {
     contenidoNav = (
       <>
         <Nav className="nav" activeKey="/home">
+          {socialIcons}
           <Nav.Item>
             <Nav.Link href="/login">Iniciar Sesion</Nav.Link>
           </Nav.Item>

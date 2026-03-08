@@ -5,7 +5,7 @@ import '../style/perfil.css';
 import { useNavigate } from 'react-router-dom';
 
 function FormPerfil() {
-  // --- ESTADOS Y VARIABLES (ANTES DEL RETURN) ---
+
   const [nombre, setNombre] = useState('');
   const [correo, setCorreo] = useState('');
   const [contra, setContra] = useState('');
@@ -14,12 +14,11 @@ function FormPerfil() {
   const [editando, setEditando] = useState(false);
   const navigate = useNavigate();
 
-  // --- EFECTOS ---
+
   useEffect(() => {
     obtenerDatos();
   }, []);
 
-  // --- FUNCIONES DE LÓGICA (HANDLERS) ---
   const obtenerDatos = () => {
     const usuarioSesion = localStorage.getItem('usuarioLogueado');
     if (usuarioSesion) {
@@ -97,7 +96,6 @@ function FormPerfil() {
     }
   };
 
-  // --- FRAGMENTOS DE RENDERIZADO (ANTES DEL RETURN) ---
   
   const headerSection = (
     <div className="perfil-header">
@@ -187,7 +185,7 @@ function FormPerfil() {
     </div>
   );
 
-  // --- ESTRUCTURA (RETURN) ---
+ 
   return (
     <div className="perfil-container">
       {headerSection}

@@ -1,4 +1,4 @@
-//GET USUARIOS funcion que consulta al endpoint a traves de un fetch,conuslta al API al Endpoint
+
 
 
 async function getUsuarios() {
@@ -25,7 +25,7 @@ async function getUsuarios() {
 
 
 
-//POST USUARIOS AQUI SE VA A CREAR LA FUNCION PARA GUARDAR UN NUEVO USUARIO
+
 
 
 async function postUsuarios(usuario){
@@ -54,10 +54,9 @@ async function postUsuarios(usuario){
 
 
 
-//PUT
 
 
-async function patchUsuarios(usuario,id){
+async function patchUsuarios(usuario, id){
 
        try {
 
@@ -82,7 +81,6 @@ async function patchUsuarios(usuario,id){
 
 
 
-//DELETE
 
 
 

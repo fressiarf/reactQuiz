@@ -61,7 +61,7 @@ function FormSesion() {
 
   return (
     <div className='formLogin'>
-      {/* Sección Izquierda: Decorativa con imagen de fondo */}
+    
       <div className="login-left">
         <img src={logo} alt="Red Huellas Seguras Logo" className="logo-form" />
         <div className="decor-box">
@@ -70,7 +70,7 @@ function FormSesion() {
         </div>
       </div>
 
-      {/* Sección Derecha: Formulario */}
+     
       <div className="login-right">
         <div className="already-account">
           <p>¿No tienes una cuenta?</p>

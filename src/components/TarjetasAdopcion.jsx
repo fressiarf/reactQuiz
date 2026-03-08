@@ -4,7 +4,7 @@ import ServiceAdopcion from '../services/ServiceAdopcion';
 import '../style/tarjetasAdopcion.css';
 
 function TarjetasAdopcion() {
-  // --- LÓGICA Y ESTADO (ANTES DEL RETURN) ---
+
   const [adopciones, setAdopciones] = useState([]);
   const navigate = useNavigate();
 
@@ -21,13 +21,12 @@ function TarjetasAdopcion() {
     navigate('/formulario-adopcion', { state: { mascotaNombre } });
   };
 
-  // Renderizado condicional de las tarjetas
   const listadoMascotas = adopciones.length > 0 ? (
     adopciones.map((adopcion) => (
       <div key={adopcion.id} className="adopcion-card">
         <div className="card-image-wrapper">
           <img
-            src={adopcion.foto || 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=500'}
+            src={adopcion.foto}
             alt={adopcion.nombre}
             className="adopcion-image"
           />
@@ -55,7 +54,6 @@ function TarjetasAdopcion() {
     <p className="no-pets-message">No hay mascotas disponibles para adopción en este momento.</p>
   );
 
-  // --- ESTRUCTURA (RETURN) ---
   return (
     <div className="adopcion-section">
       <h1 className="adopcion-title">Adopta un amigo</h1>

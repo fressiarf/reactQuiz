@@ -128,8 +128,8 @@
     padding: 60px 20px;
     background-color: #ffffff;
     text-align: center;
-    border-radius: 25px; /* Bordes redondeados */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Sombra elegante */
+    border-radius: 40px; /* Bordes redondeados incrementados */
+    box-shadow: 0 10px 35px rgba(0,0,0,0.06); /* Sombra más suave */
 }
 
 .historia-section h1 {
@@ -140,7 +140,7 @@
 .historia-img {
     max-width: 85%; /* Imagen con un tamaño balanceado */
     height: auto;
-    border-radius: 12px;
+    border-radius: 25px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     margin: 20px 0;
 }
