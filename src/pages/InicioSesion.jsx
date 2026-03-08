@@ -3,7 +3,7 @@ import FormSesion from '../components/FormSesion'
 
 function InicioSesion() {
   return (
-    <div >
+    <div className="auth-container">
       <FormSesion />
     </div>
   )

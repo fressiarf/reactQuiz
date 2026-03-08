@@ -7,7 +7,6 @@ import InicioSesion from "../pages/InicioSesion"
 import PerfilUsuario from "../pages/PerfilUsuario"
 import PagAdopcion from "../pages/PagAdopcion"
 
-
 const Routing =()=> {
 
     return(

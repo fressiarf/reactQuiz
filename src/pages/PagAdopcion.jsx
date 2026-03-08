@@ -1,12 +1,14 @@
-import React from 'react'
-import FormAdopcion from '../components/FormAdopcion'
-import "../style/home.css"
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
+import TarjetasAdopcion from '../components/TarjetasAdopcion'
 
 function PagAdopcion() {
   return (
-    <div>
-        <FormAdopcion/>
-    </div>
+    <>
+        <Navbar />
+        <TarjetasAdopcion />
+        <Footer />
+    </>
   )
 }
 

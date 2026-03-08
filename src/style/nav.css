@@ -1,4 +1,21 @@
 /* CONTENEDOR GENERAL */
+.btnCerrarSesion{
+  background: white;
+  border: 2px solid #52478a;
+  color: #52478a;
+  padding: 8px 25px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btnCerrarSesion:hover{
+  background: #52478a;
+  color: white;
+}
+
 .nav-container{
    width: 100%;
   background: white;
@@ -52,20 +69,10 @@
   color: #27ae60;
 }
 
-/* BOTON CERRAR SESION */
-.nav button{
-  background: #e74c3c;
-  border: none;
-  padding: 8px 14px;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s;
+.btnCerrarSesion:hover{
+  background: #18a1e0;
 }
 
-.nav button:hover{
-  background: #c0392b;
-}
 
 .nav-menu{
   width: 100%;

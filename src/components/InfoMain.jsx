@@ -1,10 +1,12 @@
 import React from 'react'
 import logo from "../img/logo.png"
-import { Navigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import historia from "../img/fondo2.jpg"
 
 function InfoMain() {
-    function name(params) {
-        Navigate("/adopcion")
+    const navigate = useNavigate()
+    function irAdopcion() {
+        navigate("/adopcion")
     }
   return (
     <div className="info-main-container">
@@ -12,22 +14,23 @@ function InfoMain() {
             <div className="hero-text">
                 <h1>¿Estás listo para adoptar?</h1>
                 <h2>Comienza tu búsqueda aquí</h2>
-                <button className="btn-formulario">Click aqui</button>
+                <button className="btn-pagAdopcion" onClick={irAdopcion}>Adopta un amigo</button>
             </div>
             
             <div className="hero-logo">
                 <img src={logo} alt="logo" className="small-logo" />
             </div>
         </main>
+        
 
         <section className="historia-section">
-            <h1>Nuestra historia</h1>
-            <p>Red Huellas Seguras es una plataforma dedicada a la protección y bienestar animal. 
-                Nacimos con la misión de conectar perros y gatos en busca de un hogar con personas que deseen 
-                brindarles amor y cuidados. A través de nuestra plataforma, facilitamos el proceso de adopción, 
-                ofreciendo un espacio seguro y confiable para que cada animal encuentre su familia ideal. 
-                Creemos en el poder transformador de la adopción y trabajamos cada día para hacer una diferencia 
-                en la vida de muchos animales.</p>
+            <h1>¿Quienes somos?</h1> 
+            <img src={historia} alt="historia" className="historia-img" /> <br /> 
+            <p>Somos una fundación dedicada a la protección y el bienestar animal. Nacimos con la misión de rescatar, proteger y brindar una segunda oportunidad a perros y gatos que se encuentran en situación de abandono o vulnerabilidad.
+
+Trabajamos para conectar a estos animales con personas responsables que deseen ofrecerles un hogar lleno de amor, cuidado y respeto. A través de nuestra plataforma, facilitamos el proceso de adopción, creando un espacio seguro y confiable donde cada animal pueda encontrar la familia que merece.
+
+Creemos firmemente en el poder transformador de la adopción y en la importancia de fomentar una cultura de empatía y responsabilidad hacia los animales. Por eso, día a día impulsamos acciones y proyectos que contribuyen a mejorar la calidad de vida de muchos perros y gatos, dándoles la oportunidad de comenzar una nueva historia.</p>
         </section>
     </div>
   )

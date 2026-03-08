@@ -10,6 +10,18 @@ function FormPerfil() {
     const [correo, setCorreo] = useState("")
     const [contra, setContra] = useState("")
     const [telefono, setTelefono] = useState("")
+    const [fotoPerfil, setFotoPerfil] = useState("")
+
+    const handleFileChange = (e) => {
+        const file = e.target.files[0]
+        if (file) {
+            const reader = new FileReader()
+            reader.onloadend = () => {
+                setFotoPerfil(reader.result)
+            }
+            reader.readAsDataURL(file)
+        }
+    }
 
     // Estado para saber si estamos viendo o editando
     const [editando, setEditando] = useState(false)
@@ -26,6 +38,7 @@ function FormPerfil() {
             setNombre(tempUsuario.nombre || "")
             setCorreo(tempUsuario.correo || "")
             setTelefono(tempUsuario.telefono || "")
+            setFotoPerfil(tempUsuario.fotoPerfil || "")
             setContra("")
         }
     }
@@ -49,7 +62,8 @@ function FormPerfil() {
             const objActualizar = {
                 nombre: nombre,
                 correo: correo,
-                telefono: telefono
+                telefono: telefono,
+                fotoPerfil: fotoPerfil
             }
 
             if (contra) {
@@ -120,9 +134,37 @@ function FormPerfil() {
         <div className="perfil-container">
             <div className="perfil-header">
                 <h2>Mi Perfil</h2>
+                {!editando && (
+                    <div className="perfil-avatar-main">
+                        <img 
+                            src={fotoPerfil || "https://img.freepik.com/vector-premium/icono-perfil-usuario-estilo-plano-ilustracion-vector-avatar-miembro-sobre-fondo-aislado-concepto-negocio-signo-permiso-usuario_157943-15752.jpg"} 
+                            alt="Profile" 
+                            className="main-avatar-img"
+                        />
+                    </div>
+                )}
             </div>
 
             <div className="perfil-content">
+                {editando && (
+                    <div className="image-upload-container">
+                        <input 
+                            type="file" 
+                            accept="image/*" 
+                            onChange={handleFileChange} 
+                            id="profile-foto-input" 
+                            style={{display: 'none'}} 
+                        />
+                        <label htmlFor="profile-foto-input" className="btn-upload-circle">
+                            <img 
+                                src={fotoPerfil || "https://img.freepik.com/vector-premium/icono-perfil-usuario-estilo-plano-ilustracion-vector-avatar-miembro-sobre-fondo-aislado-concepto-negocio-signo-permiso-usuario_157943-15752.jpg"} 
+                                alt="Preview" 
+                                className="preview-circular" 
+                            />
+                            <div className="overlay-upload"><span>Cambiar</span></div>
+                        </label>
+                    </div>
+                )}
 
                 <h4>Nombre completo</h4>
                 {editando ? (

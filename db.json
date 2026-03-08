@@ -6,7 +6,8 @@
       "contra": "2020",
       "correo": "friveraffwd@gmail.com",
       "rol": "Admin",
-      "telefono": "63252565"
+      "telefono": "63252565",
+      "fotoPerfil": "https://media.istockphoto.com/id/667786852/es/foto/perro-con-l%C3%A1piz-en-la-oficina.jpg?s=612x612&w=0&k=20&c=9x1lYrzhXKVdwWZGf-836N-TtBJ_JZQEu0VvUpYgHbo="
     },
     {
       "id": "936e",
@@ -14,7 +15,50 @@
       "contra": "3030",
       "correo": "errol@gmail.com",
       "rol": "usuario",
-      "telefono": "4567890"
+      "telefono": "4567890",
+      "fotoPerfil": "https://www.shutterstock.com/image-photo/pug-dog-nerd-glasses-office-260nw-2334971981.jpg"
+    }
+  ],
+  "adopciones": [
+    {
+      "id": "1",
+      "nombre": "Max",
+      "especie": "Perro",
+      "raza": "Golden Retriever",
+      "edad": "2 años",
+      "genero": "Macho",
+      "descripcion": "Un perro amigable y juguetón, ideal para familias.",
+      "foto": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=500"
+    },
+    {
+      "id": "2",
+      "nombre": "Luna",
+      "especie": "Gato",
+      "raza": "Siamés",
+      "edad": "1 año",
+      "genero": "Hembra",
+      "descripcion": "Una gata elegante y cariñosa, muy tranquila.",
+      "foto": "https://images.unsplash.com/photo-1518791841217-8ea96a1fd151?w=500"
+    },
+    {
+      "id": "3",
+      "nombre": "Rocky",
+      "especie": "Perro",
+      "raza": "Pastor Alemán",
+      "edad": "3 años",
+      "genero": "Macho",
+      "descripcion": "Leal y protector, necesita espacio para correr.",
+      "foto": "https://images.unsplash.com/photo-1561042422-c500822578ff?w=500"
+    },
+    {
+      "id": "4",
+      "nombre": "Mishi",
+      "especie": "Gato",
+      "raza": "Mestizo",
+      "edad": "6 meses",
+      "genero": "Hembra",
+      "descripcion": "Una gatita juguetona y curiosa, busca un hogar lleno de amor.",
+      "foto": "https://images.unsplash.com/photo-1574231164111-d5e6a4502561?w=500"
     }
   ]
 }

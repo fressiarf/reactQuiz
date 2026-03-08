@@ -1,142 +1,198 @@
 .perfil-container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #fff;
-    font-family: 'Outfit', sans-serif;
+    background: #ffffff;
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    margin: 40px auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .perfil-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: center;
     margin-bottom: 30px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 }
 
 .perfil-header h2 {
     margin: 0;
+    color: #333;
     font-size: 24px;
-    background: linear-gradient(135deg, #646cff, #ff64b4);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-weight: 700;
 }
 
-.info-group {
-    margin-bottom: 20px;
+.main-avatar-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #f8f9fc;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.info-group label {
-    display: block;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 5px;
+/* Estilos de carga de imagen circulares (Sincronizados con Registro) */
+.image-upload-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
-.info-value {
-    font-size: 18px;
-    font-weight: 500;
-    color: #fff;
-    padding: 10px 0;
-}
-
-.info-input {
-    width: 100%;
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    color: #fff;
-    font-size: 16px;
+.btn-upload-circle {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    cursor: pointer;
+    overflow: hidden;
+    border: 4px solid #f8f9fc;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
 }
 
-.info-input:focus {
-    outline: none;
-    border-color: #646cff;
-    background: rgba(255, 255, 255, 0.1);
+.btn-upload-circle:hover {
+    transform: scale(1.05);
+    border-color: #4e73df;
 }
 
-.btn-edit {
-    background: linear-gradient(135deg, #646cff, #535bf2);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: transform 0.2s, box-shadow 0.2s;
+.preview-circular {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
-.btn-edit:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(100, 108, 255, 0.4);
-}
-
-.btn-save {
-    background: linear-gradient(135deg, #2ecc71, #27ae60);
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    margin-right: 10px;
-}
-
-.btn-cancel {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 12px 25px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-.actions {
-    margin-top: 30px;
+.overlay-upload {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
-/* Light mode support */
-@media (prefers-color-scheme: light) {
-    .perfil-container {
-        background: rgba(255, 255, 255, 0.9);
-        color: #2c3e50;
-        border: 1px solid #eee;
-    }
+.overlay-upload span {
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
 
-    .perfil-header {
-        border-bottom: 1px solid #eee;
-    }
+.btn-upload-circle:hover .overlay-upload {
+    opacity: 1;
+}
 
-    .info-group label {
-        color: #7f8c8d;
-    }
+.perfil-content {
+    display: flex;
+    flex-direction: column;
+}
 
-    .info-value {
-        color: #2c3e50;
-    }
+/* Labels */
+.perfil-content h4 {
+    margin: 15px 0 5px;
+    font-size: 14px;
+    color: #555;
+    font-weight: 600;
+}
 
-    .info-input {
-        background: #f9f9f9;
-        border: 1px solid #ddd;
-        color: #2c3e50;
-    }
+/* Inputs */
+.perfil-content input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s ease;
+    font-size: 15px;
+}
 
-    .btn-cancel {
-        background: #eee;
-        color: #2c3e50;
-        border: 1px solid #ddd;
-    }
+.perfil-content input:focus {
+    border-color: #4e73df;
+    box-shadow: 0 0 5px rgba(78, 115, 223, 0.4);
+}
+
+.perfil-content input:disabled {
+    background-color: #f5f5f5;
+    color: #888;
+    cursor: not-allowed;
+}
+
+/* Valores en modo vista */
+.info-value {
+    font-size: 16px;
+    color: #333;
+    padding: 10px;
+    background: #f8f9fc;
+    border-radius: 8px;
+    border: 1px solid #edf0f7;
+}
+
+/* Contenedor botones */
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+/* Botones de acción (Estilo FormRegistro) */
+.actions button {
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border: none;
+}
+
+/* Botón principal (Guardar/Editar) */
+.actions button:first-child {
+    background-color: #4e73df;
+    color: white;
+}
+
+.actions button:first-child:hover {
+    background-color: #2e59d9;
+    transform: translateY(-1px);
+}
+
+/* Botón secundario/cancelar */
+.btn-cancel {
+    background: none !important;
+    border: none !important;
+    color: #4e73df !important;
+    font-size: 14px !important;
+    padding: 5px !important;
+}
+
+.btn-cancel:hover {
+    text-decoration: underline;
+}
+
+/* Botón peligro (Eliminar) */
+.actions button:last-child:not(:first-child) {
+    background-color: transparent;
+    color: #e74c3c;
+    border: 1px solid #e74c3c;
+}
+
+.actions button:last-child:not(:first-child):hover {
+    background-color: #e74c3c;
+    color: white;
 }
 
 /* --- Drawer / Lateral Panel Styles --- */

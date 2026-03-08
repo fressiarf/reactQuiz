@@ -1,0 +1,152 @@
+.users-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.admin-title {
+    color: #2c3e50;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #1fa3d1;
+    display: inline-block;
+}
+
+/* Grilla de Tarjetas */
+.user-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* Tarjeta Individual */
+.user-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.user-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+/* Header de la tarjeta */
+.user-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.user-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #f0faff;
+}
+
+.user-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.user-role-badge {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.role-admin {
+    background-color: #ebf5ff;
+    color: #4e73df;
+    border: 1px solid #4e73df;
+}
+
+.role-user {
+    background-color: #f8f9fc;
+    color: #858796;
+    border: 1px solid #dddfeb;
+}
+
+/* Cuerpo de la tarjeta */
+.user-body {
+    margin-bottom: 25px;
+}
+
+.user-body p {
+    margin: 8px 0;
+    color: #5a5c69;
+    font-size: 0.95rem;
+}
+
+.user-body strong {
+    color: #4e73df;
+}
+
+.user-password-hint {
+    color: #b7b9cc !important;
+    font-size: 0.85rem !important;
+}
+
+/* Acciones de la tarjeta */
+.user-actions {
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 15px;
+}
+
+.user-actions button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-edit-admin {
+    background-color: #f8f9fc;
+    color: #4e73df;
+    border: 1px solid #4e73df !important;
+}
+
+.btn-edit-admin:hover {
+    background-color: #4e73df;
+    color: white;
+}
+
+.btn-delete-admin {
+    background-color: #fff5f5;
+    color: #e74a3b;
+    border: 1px solid #e74a3b !important;
+}
+
+.btn-delete-admin:hover {
+    background-color: #e74a3b;
+    color: white;
+}
+
+.no-users {
+    text-align: center;
+    grid-column: 1 / -1;
+    padding: 40px;
+    color: #858796;
+    font-style: italic;
+    background: #f8f9fc;
+    border-radius: 10px;
+}

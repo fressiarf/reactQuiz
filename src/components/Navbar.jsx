@@ -3,17 +3,38 @@ import { Nav } from 'react-bootstrap'
 import logo2 from "../img/logo2.png"
 import "../style/nav.css"
 import { Link, useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 function Navbar() {
 
   const navigate = useNavigate()
-  const [userLogeado, setUserLogeado] = useState(JSON.parse(localStorage.getItem("usuarioLogueado"))
-  )
+  const [userLogeado, setUserLogeado] = useState(JSON.parse(localStorage.getItem("usuarioLogueado")))
 
   const cerrarSesion = () => {
-    localStorage.removeItem("usuarioLogueado")
-    setUserLogeado(null)
-    navigate("/")
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: "Se cerrará tu sesión actual.",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#4e73df',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, salir',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.removeItem("usuarioLogueado")
+        setUserLogeado(null)
+        navigate("/")
+        
+        Swal.fire({
+          title: '¡Sesión cerrada!',
+          text: 'Has salido correctamente.',
+          icon: 'success',
+          timer: 1500,
+          showConfirmButton: false
+        })
+      }
+    })
   }
   let contenidoNav
   if (userLogeado) {
@@ -22,12 +43,12 @@ function Navbar() {
         <>
           <Nav className="nav" activeKey="/home">
           <Nav.Item>
-            <Nav.Link href="/home">Home</Nav.Link>
+            <Nav.Link href="/admin">Admin</Nav.Link>
           </Nav.Item>
             <Nav.Item>
               <Nav.Link href="/perfil">Perfil</Nav.Link>
             </Nav.Item>
-            <button onClick={cerrarSesion}>Cerrar sesión</button>
+            <button onClick={cerrarSesion} className='btnCerrarSesion'>Cerrar sesión</button>
           </Nav>
         </>
       )
@@ -35,13 +56,10 @@ function Navbar() {
       contenidoNav = (
         <>
           <Nav className="nav" activeKey="/home">
-          <Nav.Item>
-            <Nav.Link href="/home">Home</Nav.Link>
-          </Nav.Item>
             <Nav.Item>
               <Nav.Link href="/perfil">Perfil</Nav.Link>
             </Nav.Item>
-            <button onClick={cerrarSesion}>Cerrar sesión</button>
+            <button onClick={cerrarSesion} className='btnCerrarSesion'>Cerrar sesión</button>
           </Nav>
         </>
       )
@@ -50,12 +68,6 @@ function Navbar() {
     contenidoNav = (
       <>
         <Nav className="nav" activeKey="/home">
-           <Nav.Item>
-            <Nav.Link href="/perfil">Perfil</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/home">Home</Nav.Link>
-          </Nav.Item>
           <Nav.Item>
             <Nav.Link href="/login">Iniciar Sesion</Nav.Link>
           </Nav.Item>

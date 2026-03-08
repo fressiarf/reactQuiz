@@ -7,7 +7,7 @@ function CrudUsuarios() {
 
 
   return (
-    <div >
+    <div className="auth-container">
       <FormRegistro />
     </div>
   )
