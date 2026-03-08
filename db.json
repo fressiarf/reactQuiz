@@ -38,7 +38,7 @@
       "edad": "1 año",
       "genero": "Hembra",
       "descripcion": "Una gata elegante y cariñosa, muy tranquila.",
-      "foto": "https://images.unsplash.com/photo-1518791841217-8ea96a1fd151?w=500"
+      "foto": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=500"
     },
     {
       "id": "3",
@@ -48,7 +48,7 @@
       "edad": "3 años",
       "genero": "Macho",
       "descripcion": "Leal y protector, necesita espacio para correr.",
-      "foto": "https://images.unsplash.com/photo-1561042422-c500822578ff?w=500"
+      "foto": "https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?w=500"
     },
     {
       "id": "4",
@@ -58,7 +58,83 @@
       "edad": "6 meses",
       "genero": "Hembra",
       "descripcion": "Una gatita juguetona y curiosa, busca un hogar lleno de amor.",
-      "foto": "https://images.unsplash.com/photo-1574231164111-d5e6a4502561?w=500"
+      "foto": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?w=500"
+    },
+    {
+      "id": "5",
+      "nombre": "Pelusa",
+      "especie": "Gato",
+      "raza": "Persa",
+      "edad": "2 años",
+      "genero": "Hembra",
+      "descripcion": "Una gatita tierna y cariñosa, busca un hogar lleno de amor.",
+      "foto": "https://images.unsplash.com/photo-1735618603118-89e26b0dcf6e?w=500"
+    },
+    {
+      "id": "6",
+      "nombre": "Chispas",
+      "especie": "Perro",
+      "raza": "Criollo",
+      "edad": "1 año",
+      "genero": "Hembra",
+      "descripcion": "Una perrita tierna, busca un hogar lleno de amor.",
+      "foto": "https://images.unsplash.com/photo-1729251524660-d62a34a92685?w=500"
+    },
+    {
+      "id": "7",
+      "nombre": "Firulais",
+      "especie": "Perro",
+      "raza": "Criollo",
+      "edad": "3 años",
+      "genero": "Macho",
+      "descripcion": "Un perrito  juguetón, busca un hogar lleno de amor.",
+      "foto": "https://images.unsplash.com/photo-1619876451741-407e8350442e?w=500"
+    },
+    {
+      "id": "8",
+      "nombre": "Firulais",
+      "especie": "Perro",
+      "raza": "Labrador",
+      "edad": "4 años",
+      "genero": "Macho",
+      "descripcion": "Un perrito tierno y juguetón, busca un hogar lleno de amor.",
+      "foto": "https://images.unsplash.com/photo-1667516837506-c13f487e58bf?w=500"
+    },
+    {
+      "id": "9",
+      "nombre": "Balto",
+      "especie": "Perro",
+      "raza": "Husky Siberiano",
+      "edad": "1 año",
+      "genero": "Macho",
+      "descripcion": "Un cachorro activo y juguetón con hermosos ojos azules, le encanta correr y jugar en el parque.",
+      "foto": "https://images.unsplash.com/photo-1617895153857-82fe79adfcd4?w=500"
+    }
+  ],
+  "donaciones": [
+    {}
+  ],
+  "casosExito": [
+    {
+      "id": "1",
+      "nombre": "Fofito",
+      "historia": "Fofito fue encontrado en una caja bajo la lluvia. Hoy vive feliz en una casa de campo con dos hermanos humanos que no dejan de jugar con él.",
+      "foto": "https://es.mypet.com/wp-content/uploads/sites/23/2021/03/GettyImages-623368750-e1582816063521-1.jpg",
+      "etiqueta": "Final Feliz"
+    },
+    {
+      "id": "2",
+      "nombre": "Mora",
+      "historia": "Mora pasó 3 años en nuestro refugio esperando a su familia ideal. Finalmente, una pareja de jubilados la adoptó y ahora es la reina del sofá.",
+      "foto": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=500",
+      "etiqueta": "Adoptada"
+    },
+    {
+      "id": "3",
+      "nombre": "Rayo",
+      "historia": "Rescatado tras un accidente, Rayo necesitó meses de terapia. Hoy corre por el parque con su nueva familia como si nunca hubiera pasado nada.",
+      "foto": "https://www.marthadebayle.com/wp-content/uploads/2025/05/perro-de-raza-grande.jpg",
+      "etiqueta": "Recuperado"
     }
   ]
 }

@@ -6,6 +6,7 @@ import CrudUsuarios from "../pages/CrudUsuarios";
 import InicioSesion from "../pages/InicioSesion"
 import PerfilUsuario from "../pages/PerfilUsuario"
 import PagAdopcion from "../pages/PagAdopcion"
+import PagFormAdopcion from "../pages/PagFormAdopcion"
 
 const Routing =()=> {
 
@@ -19,6 +20,7 @@ const Routing =()=> {
                  <Route path="/login" element={<InicioSesion/>}/>
                  <Route path="/perfil" element={<PerfilUsuario/>}/>
                  <Route path="/adopcion" element={<PagAdopcion/>}/>
+                 <Route path="/formulario-adopcion" element={<PagFormAdopcion/>}/>
             </Routes>
         </Router>
 
