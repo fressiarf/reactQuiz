@@ -74,6 +74,14 @@ function FormAdopcion() {
     }
   };
 
+  const handleTelefonoChange = (e) => {
+    const value = e.target.value;
+    if (value.startsWith('-')) {
+      return;
+    }
+    setTelefono(value);
+  };
+
   return (
     <div className="adopcion-wrapper">
       <div className="adopcion-container">
@@ -93,7 +101,7 @@ function FormAdopcion() {
           <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required value={correo} onChange={(e) => setCorreo(e.target.value)} />
 
           <label htmlFor="telefono">Teléfono</label>
-          <input type="text" id="telefono" name="telefono" placeholder="Número de contacto" required value={telefono} onChange={(e) => setTelefono(e.target.value)} />
+          <input type="text" id="telefono" name="telefono" placeholder="Número de contacto" required value={telefono} onChange={handleTelefonoChange} />
 
           <label htmlFor="mascota-solicitada">Mascota seleccionada</label>
           <input 

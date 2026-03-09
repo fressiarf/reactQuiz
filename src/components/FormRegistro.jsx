@@ -71,11 +71,11 @@ function FormRegistro() {
             return;
         }
 
-        if (!/^[0-9]{8}$/.test(telefonoUsuario)) {
+        if (!/^[0-9]{4}-?[0-9]{4}$/.test(telefonoUsuario)) {
             Swal.fire({
                 icon: 'warning',
                 title: 'Teléfono Inválido',
-                text: 'El teléfono debe tener 8 dígitos numéricos.',
+                text: 'El teléfono debe tener 8 dígitos numéricos (se permite un guion).',
                 confirmButtonColor: '#4e73df'
             });
             return;
@@ -126,6 +126,15 @@ function FormRegistro() {
     function irInicioSesion () {
         navigate('/login')
     }
+
+    const handleTelefonoChange = (evento) => {
+        const value = evento.target.value;
+        if (value.startsWith('-')) {
+            return;
+        }
+        setTelefonoUsuario(value);
+    };
+
     return (
         <div className='formRegistro'>
 
@@ -173,7 +182,7 @@ function FormRegistro() {
                     </div>
                     <div className="form-group">
                         <h4>Teléfono</h4>
-                        <input type="text" value={telefonoUsuario} onChange={(evento) => setTelefonoUsuario(evento.target.value)} placeholder="8 dígitos" />
+                        <input type="text" value={telefonoUsuario} onChange={handleTelefonoChange} placeholder="8 dígitos" />
                     </div>
                 </div>
                 
